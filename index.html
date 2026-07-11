@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ganesa Sastrigal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Marcellus&family=Mukta:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,57 +14,122 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --maroon: #6b1d14;
+            --maroon-deep: #4e130c;
+            --saffron: #d97706;
+            --saffron-light: #e8913a;
+            --gold: #b8860b;
+            --gold-soft: #c9a227;
+            --cream: #fdf6ea;
+            --cream-2: #f7ead3;
+            --card: #fffdf8;
+            --ink: #3d332a;
+            --ink-soft: #6a5c4d;
+            --line: #ecdcc2;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Mukta', 'Segoe UI', 'Noto Sans', 'Noto Sans Tamil', 'Noto Sans Malayalam', 'Noto Sans Devanagari', sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background:
+                radial-gradient(1200px 600px at 50% -10%, #fff6e6 0%, rgba(255,246,230,0) 60%),
+                linear-gradient(160deg, #f3e1c4 0%, #efdcc0 40%, #ead0ad 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 40px 20px;
         }
 
         .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 60px 40px;
-            max-width: 900px;
-            text-align: center;
+            position: relative;
+            background: var(--card);
+            border-radius: 18px;
+            box-shadow: 0 24px 60px rgba(78, 19, 12, 0.18);
+            padding: 0 0 48px;
+            max-width: 920px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(184, 134, 11, 0.25);
+        }
+
+        .topbar {
+            height: 8px;
+            background: linear-gradient(90deg, var(--saffron) 0%, var(--gold-soft) 50%, var(--maroon) 100%);
         }
 
         .header {
-            margin-bottom: 40px;
+            text-align: center;
+            padding: 46px 40px 30px;
+            background:
+                radial-gradient(600px 240px at 50% 0%, rgba(217, 119, 6, 0.10), rgba(217, 119, 6, 0) 70%);
+        }
+
+        .om {
+            font-family: 'Noto Sans Devanagari', serif;
+            font-size: 2.6em;
+            color: var(--saffron);
+            line-height: 1;
+            display: block;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
         }
 
         h1 {
-            font-size: 3em;
-            color: #667eea;
-            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', 'Marcellus', serif;
+            font-size: 3.2em;
+            color: var(--maroon);
+            letter-spacing: 0.5px;
             font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-family: 'Marcellus', serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8em;
+            color: var(--saffron);
+            margin-top: 10px;
         }
 
         .divider {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 30px;
-            border-radius: 2px;
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+            margin: 22px auto 0;
+            position: relative;
+        }
+
+        .divider::after {
+            content: "\2756";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gold-soft);
+            background: var(--card);
+            padding: 0 10px;
+            font-size: 0.9em;
         }
 
         .bio {
-            font-size: 1.1em;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 40px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            color: var(--ink-soft);
+            font-style: italic;
+            margin: 22px auto 26px;
+            max-width: 560px;
+            padding: 0 40px;
+            text-align: center;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
@@ -69,138 +137,199 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: #f0f0f0;
-            color: #667eea;
+            width: 48px;
+            height: 48px;
+            background: #fff;
+            color: var(--maroon);
             border-radius: 50%;
             text-decoration: none;
-            font-size: 1.5em;
             transition: all 0.3s ease;
-            border: 2px solid #667eea;
+            border: 1.5px solid var(--gold-soft);
         }
 
         .social-links a:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: var(--maroon);
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(107, 29, 20, 0.35);
         }
 
         .rituals-section {
-            margin-top: 50px;
-            padding-top: 40px;
-            border-top: 2px solid #eee;
+            margin: 40px 40px 0;
+            padding-top: 36px;
+            border-top: 1px solid var(--line);
             text-align: left;
         }
 
         .rituals-section h2 {
-            color: #667eea;
-            margin-bottom: 30px;
-            font-size: 1.8em;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--maroon);
+            margin-bottom: 26px;
+            font-size: 2.1em;
+            font-weight: 700;
             text-align: center;
         }
 
         .language-tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 26px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .language-tabs button {
-            padding: 10px 20px;
-            border: 2px solid #667eea;
-            background: white;
-            color: #667eea;
-            border-radius: 5px;
+            font-family: 'Mukta', sans-serif;
+            padding: 10px 24px;
+            border: 1.5px solid var(--gold-soft);
+            background: transparent;
+            color: var(--maroon);
+            border-radius: 999px;
             cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .language-tabs button.active {
-            background: #667eea;
-            color: white;
+            font-size: 0.95em;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            transition: all 0.25s ease;
         }
 
         .language-tabs button:hover {
-            background: #667eea;
-            color: white;
+            background: var(--cream-2);
+        }
+
+        .language-tabs button.active {
+            background: linear-gradient(135deg, var(--saffron) 0%, var(--maroon) 100%);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 6px 16px rgba(107, 29, 20, 0.28);
         }
 
         .ritual-content {
             display: none;
-            background: #f9f9f9;
-            padding: 25px;
-            border-radius: 8px;
-            line-height: 1.8;
-            max-height: 600px;
+            background: var(--cream);
+            padding: 30px;
+            border-radius: 14px;
+            line-height: 1.9;
+            max-height: 620px;
             overflow-y: auto;
+            border: 1px solid var(--line);
+        }
+
+        .ritual-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .ritual-content::-webkit-scrollbar-thumb {
+            background: var(--gold-soft);
+            border-radius: 8px;
         }
 
         .ritual-content.active {
             display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .ritual-content h3 {
-            color: #667eea;
-            margin: 20px 0 15px 0;
-            font-size: 1.2em;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--maroon);
+            margin: 26px 0 14px 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            padding-bottom: 8px;
+            border-bottom: 1.5px dashed var(--line);
+        }
+
+        .ritual-content h3:first-child {
+            margin-top: 0;
         }
 
         .ritual-content p {
             margin-bottom: 15px;
-            color: #555;
-            font-size: 0.95em;
+            color: var(--ink);
+            font-size: 1em;
             text-align: justify;
         }
 
         .ritual-content .instructions {
             background: #fff;
-            padding: 15px;
-            border-left: 4px solid #667eea;
-            margin: 15px 0;
-            border-radius: 4px;
+            padding: 16px 18px;
+            border-left: 4px solid var(--saffron);
+            margin: 18px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(107, 29, 20, 0.05);
+        }
+
+        .ritual-content .instructions strong {
+            color: var(--saffron);
         }
 
         .ritual-content .note {
-            background: #fff3cd;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin: 15px 0;
-            border-radius: 4px;
+            background: #fff7e6;
+            padding: 14px 18px;
+            border-left: 4px solid var(--gold-soft);
+            margin: 16px 0;
+            border-radius: 6px;
+            color: var(--ink-soft);
+        }
+
+        .ritual-content .note strong {
+            color: var(--gold);
         }
 
         .highlight-red {
-            color: #dc3545;
-            font-weight: bold;
+            color: #b3261e;
+            font-weight: 600;
         }
 
         .contact-info {
-            background: #f0f0f0;
+            background: var(--cream-2);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-top: 20px;
         }
 
         .contact-info p {
             margin: 8px 0;
-            color: #666;
+            color: var(--ink-soft);
+        }
+
+        .site-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 0 40px;
+            color: var(--ink-soft);
+            font-size: 0.85em;
+        }
+
+        .site-footer .lotus {
+            color: var(--saffron);
+            font-size: 1.2em;
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 40px 30px;
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 36px 24px 24px;
             }
 
             h1 {
-                font-size: 2.2em;
+                font-size: 2.4em;
             }
 
             .bio {
-                font-size: 1em;
+                font-size: 1.25em;
+                padding: 0 16px;
+            }
+
+            .rituals-section {
+                margin: 32px 18px 0;
             }
 
             .language-tabs {
@@ -212,15 +341,18 @@
             }
 
             .ritual-content {
-                padding: 15px;
+                padding: 18px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="topbar"></div>
         <div class="header">
+            <span class="om">&#2384;</span>
             <h1>Ganesa Sastrigal</h1>
+            <div class="subtitle">Vedic Rituals &amp; Guidance</div>
             <div class="divider"></div>
         </div>
 
@@ -240,10 +372,10 @@
             <h2>Yajur Upakarma - 2026</h2>
             
             <div class="language-tabs">
-                <button class="tab-button active" onclick="showLanguage('tamil')">Tamil</button>
-                <button class="tab-button" onclick="showLanguage('hindi')">Hindi</button>
-                <button class="tab-button" onclick="showLanguage('english')">English</button>
-                <button class="tab-button" onclick="showLanguage('malayalam')">Malayalam</button>
+                <button class="tab-button active" onclick="showLanguage('tamil', this)">Tamil</button>
+                <button class="tab-button" onclick="showLanguage('hindi', this)">Hindi</button>
+                <button class="tab-button" onclick="showLanguage('english', this)">English</button>
+                <button class="tab-button" onclick="showLanguage('malayalam', this)">Malayalam</button>
             </div>
 
             <!-- Tamil Content -->
@@ -382,27 +514,27 @@
 
             </div>
         </div>
+
+        <div class="site-footer">
+            <span class="lotus">&#10086;</span>
+            <p>&copy; 2026 Ganesa Sastrigal &middot; Dombivli</p>
+        </div>
     </div>
 
     <script>
-        function showLanguage(lang) {
-            // Hide all ritual content
-            const contents = document.querySelectorAll('.ritual-content');
-            contents.forEach(content => {
+        function showLanguage(lang, btn) {
+            document.querySelectorAll('.ritual-content').forEach(content => {
                 content.classList.remove('active');
             });
 
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => {
+            document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
 
-            // Show selected language
             document.getElementById(lang).classList.add('active');
-
-            // Add active class to clicked button
-            event.target.classList.add('active');
+            if (btn) {
+                btn.classList.add('active');
+            }
         }
     </script>
 </body>
