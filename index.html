@@ -273,6 +273,21 @@
             font-weight: 600;
         }
 
+        .items-required {
+            background: linear-gradient(90deg, rgba(217, 119, 6, 0.12), rgba(217, 119, 6, 0.03));
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--gold-soft);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+            color: var(--ink);
+            font-size: 0.98em;
+        }
+
+        .items-required strong {
+            color: var(--maroon);
+        }
+
         .ritual-content .benediction {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
@@ -366,6 +381,10 @@
                 <button class="tab-button" onclick="showLanguage('hindi', this)">Hindi</button>
                 <button class="tab-button" onclick="showLanguage('english', this)">English</button>
                 <button class="tab-button" onclick="showLanguage('malayalam', this)">Malayalam</button>
+            </div>
+
+            <div class="items-required">
+                <strong>Items required:</strong> Panchatram-Udhrani, Ellu (Til) Banana, Coconut, Neyappam, Vetrilai Pakku
             </div>
 
             <!-- Tamil Content -->
