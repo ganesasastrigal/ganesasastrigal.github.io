@@ -127,19 +127,20 @@
         }
 
         .social-links {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 3;
             display: flex;
-            justify-content: center;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-top: 22px;
+            gap: 10px;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 34px;
+            height: 34px;
             background: #fff;
             color: var(--maroon);
             border-radius: 50%;
@@ -148,10 +149,15 @@
             border: 1.5px solid var(--gold-soft);
         }
 
+        .social-links a svg {
+            width: 17px;
+            height: 17px;
+        }
+
         .social-links a:hover {
             background: var(--maroon);
             color: #fff;
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 8px 18px rgba(107, 29, 20, 0.35);
         }
 
@@ -278,7 +284,7 @@
             font-weight: 600;
         }
 
-        .benediction {
+        .ritual-content .benediction {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5em;
@@ -354,6 +360,13 @@
 <body>
     <div class="container">
         <div class="topbar"></div>
+        <div class="social-links">
+            <a href="mailto:ganesasastrigal@gmail.com" title="Email" aria-label="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </a>
+        </div>
         <div class="header">
             <span class="om">&#2384;</span>
             <h1>Ganesa Sastrigal</h1>
@@ -364,14 +377,6 @@
         <p class="bio">
             Welcome to the spiritual space.
         </p>
-
-        <div class="social-links">
-            <a href="mailto:ganesasastrigal@gmail.com" title="Email" aria-label="Email">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </a>
-        </div>
 
         <div class="rituals-section">
             <h2>Yajur Upakarma - 2026</h2>
